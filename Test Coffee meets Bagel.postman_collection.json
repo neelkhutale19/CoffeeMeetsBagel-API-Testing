@@ -1,0 +1,455 @@
+{
+	"id": "a7eb34d6-78e5-acc3-94ce-ce0980a91437",
+	"name": "Test Coffee meets Bagel",
+	"description": "",
+	"order": [
+		"bf103ea4-1919-4360-33ea-7f68726518c9",
+		"0542fe76-376e-4e69-c238-0e2d4785b542",
+		"46a97557-9f7a-a331-02a1-7702f78ed27a",
+		"b4103f19-c7b7-9f67-845a-75b6536ddab1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1514321720487,
+	"owner": "2375212",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "0542fe76-376e-4e69-c238-0e2d4785b542",
+			"headers": "",
+			"headerData": [],
+			"url": "https://cmb-bagels-api.herokuapp.com/bagels/?dist=100&origin=37.8044,-122.2711&limit=3",
+			"queryParams": [
+				{
+					"key": "dist",
+					"value": "100",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "origin",
+					"value": "37.8044,-122.2711",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1180d859-40ed-407c-a33e-0847d7b131e0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Filter based on distance and origin Parameters\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "cmb",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "bagel",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"type": "any"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"time": 1514877964726,
+			"name": "https://cmb-bagels-api.herokuapp.com/bagels/",
+			"description": "",
+			"collectionId": "a7eb34d6-78e5-acc3-94ce-ce0980a91437",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Filter based on distance and origin Parameters\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "cmb",
+				"password": "bagel"
+			}
+		},
+		{
+			"id": "46a97557-9f7a-a331-02a1-7702f78ed27a",
+			"headers": "",
+			"headerData": [],
+			"url": "https://cmb-bagels-api.herokuapp.com/bagels/?gender=m",
+			"queryParams": [
+				{
+					"key": "gender",
+					"value": "m",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39e1d05c-c9c0-48ac-a397-53da93008ef5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Filter based on Gender Parameter\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "cmb",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "bagel",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"type": "any"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"time": 1514877981917,
+			"name": "https://cmb-bagels-api.herokuapp.com/bagels/",
+			"description": "",
+			"collectionId": "a7eb34d6-78e5-acc3-94ce-ce0980a91437",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Filter based on Gender Parameter\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "cmb",
+				"password": "bagel"
+			}
+		},
+		{
+			"id": "b4103f19-c7b7-9f67-845a-75b6536ddab1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://cmb-bagels-api.herokuapp.com/bagels/",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "98904654-e8a9-4be8-9d1f-2e41c0cfbc18",
+						"type": "text/javascript",
+						"exec": [
+							"//Testing Post request",
+							"tests[\"Created User\"] = responseCode.code === 201;"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "cmb",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "bagel",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"type": "any"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"time": 1514877867475,
+			"name": "https://cmb-bagels-api.herokuapp.com/bagels/",
+			"description": "",
+			"collectionId": "a7eb34d6-78e5-acc3-94ce-ce0980a91437",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "//Testing Post request\ntests[\"Created User\"] = responseCode.code === 201;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "cmb",
+				"password": "bagel"
+			},
+			"rawModeData": "\r\n\r\n{\r\n\"name\":\"Chinmay Moharir\",\r\n\"age\":36,\r\n\"gender\":\"f\",\r\n\"locations\":[{\"name\":\"Fullerton, CA\",\"coordinates\":[-37.9252124,144.8277777]}]\r\n}"
+		},
+		{
+			"id": "bf103ea4-1919-4360-33ea-7f68726518c9",
+			"headers": "",
+			"headerData": [],
+			"url": "https://cmb-bagels-api.herokuapp.com/bagels/?limit=20&offset=20",
+			"queryParams": [
+				{
+					"key": "limit",
+					"value": "20",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "offset",
+					"value": "20",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de4cffa7-4f36-49d6-908b-c4b9802645b1",
+						"type": "text/javascript",
+						"exec": [
+							"//Checking response code",
+							"tests[\"Filter based on Limit and Offset Parameters\"] = responseCode.code === 200;",
+							"",
+							"//Test to check Content-Type",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"",
+							"// Response time evaluation",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(900);",
+							"});",
+							"",
+							"",
+							"//Parameter Test",
+							"pm.test(\"Gender parameter is present\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"gender\");",
+							"});",
+							"",
+							"",
+							"//Gender Test",
+							"",
+							"pm.test(\"Females present in search response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData);",
+							"    pm.expect(jsonData.results[1].gender).to.eql(\"f\");",
+							"});",
+							"",
+							"//Age Test",
+							"pm.test(\"Age verification should be 100\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData);",
+							"    pm.expect(jsonData.results[1].age).to.eql(100);",
+							"});",
+							"",
+							"",
+							"",
+							"//Schema Test",
+							"",
+							"var schema = {",
+							"  \"definitions\": {},",
+							"  \"$schema\": \"http://json-schema.org/draft-06/schema#\",",
+							"  \"$id\": \"https://cmb-bagels-api.herokuapp.com/bagels/?limit=2&offset=20\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"checked\": {",
+							"      \"$id\": \"/properties/checked\",",
+							"      \"type\": \"boolean\",",
+							"      \"title\": \"The Checked Schema.\",",
+							"      \"description\": \"An explanation about the purpose of this instance.\",",
+							"      \"default\": false,",
+							"      \"examples\": [",
+							"        false",
+							"      ]",
+							"    },",
+							"    \"dimensions\": {",
+							"      \"$id\": \"/properties/dimensions\",",
+							"      \"type\": \"object\",",
+							"      \"properties\": {",
+							"        \"width\": {",
+							"          \"$id\": \"/properties/dimensions/properties/width\",",
+							"          \"type\": \"integer\",",
+							"          \"title\": \"The Width Schema.\",",
+							"          \"description\": \"An explanation about the purpose of this instance.\",",
+							"          \"default\": 0,",
+							"          \"examples\": [",
+							"            5",
+							"          ]",
+							"        },",
+							"        \"height\": {",
+							"          \"$id\": \"/properties/dimensions/properties/height\",",
+							"          \"type\": \"integer\",",
+							"          \"title\": \"The Height Schema.\",",
+							"          \"description\": \"An explanation about the purpose of this instance.\",",
+							"          \"default\": 0,",
+							"          \"examples\": [",
+							"            10",
+							"          ]",
+							"        }",
+							"      }",
+							"    },",
+							"    \"id\": {",
+							"      \"$id\": \"/properties/id\",",
+							"      \"type\": \"integer\",",
+							"      \"title\": \"The Id Schema.\",",
+							"      \"description\": \"An explanation about the purpose of this instance.\",",
+							"      \"default\": 0,",
+							"      \"examples\": [",
+							"        1",
+							"      ]",
+							"    },",
+							"    \"name\": {",
+							"      \"$id\": \"/properties/name\",",
+							"      \"type\": \"string\",",
+							"      \"title\": \"The Name Schema.\",",
+							"      \"description\": \"An explanation about the purpose of this instance.\",",
+							"      \"default\": \"\",",
+							"      \"examples\": [",
+							"        \"A green door\"",
+							"      ]",
+							"    },",
+							"    \"price\": {",
+							"      \"$id\": \"/properties/price\",",
+							"      \"type\": \"number\",",
+							"      \"title\": \"The Price Schema.\",",
+							"      \"description\": \"An explanation about the purpose of this instance.\",",
+							"      \"default\": 0,",
+							"      \"examples\": [",
+							"        12.5",
+							"      ]",
+							"    },",
+							"    \"tags\": {",
+							"      \"$id\": \"/properties/tags\",",
+							"      \"type\": \"array\",",
+							"      \"items\": {",
+							"        \"$id\": \"/properties/tags/items\",",
+							"        \"type\": \"string\",",
+							"        \"title\": \"The 0 Schema.\",",
+							"        \"description\": \"An explanation about the purpose of this instance.\",",
+							"        \"default\": \"\",",
+							"        \"examples\": [",
+							"          \"home\"",
+							"        ]",
+							"      }",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  var jsonData = pm.response.json();",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"  ",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "username",
+						"value": "cmb",
+						"type": "string"
+					},
+					{
+						"key": "password",
+						"value": "bagel",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"type": "any"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"time": 1514877956002,
+			"name": "https://cmb-bagels-api.herokuapp.com/bagels/",
+			"description": "",
+			"collectionId": "a7eb34d6-78e5-acc3-94ce-ce0980a91437",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "//Checking response code\ntests[\"Filter based on Limit and Offset Parameters\"] = responseCode.code === 200;\n\n//Test to check Content-Type\npm.test(\"Content-Type is present\", function () {\n    pm.response.to.have.header(\"Content-Type\");\n});\n\n\n// Response time evaluation\npm.test(\"Response time is less than 200ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(900);\n});\n\n\n//Parameter Test\npm.test(\"Gender parameter is present\", function () {\n    pm.expect(pm.response.text()).to.include(\"gender\");\n});\n\n\n//Gender Test\n\npm.test(\"Females present in search response\", function () {\n    var jsonData = pm.response.json();\n    console.log(jsonData);\n    pm.expect(jsonData.results[1].gender).to.eql(\"f\");\n});\n\n//Age Test\npm.test(\"Age verification should be 100\", function () {\n    var jsonData = pm.response.json();\n    console.log(jsonData);\n    pm.expect(jsonData.results[1].age).to.eql(100);\n});\n\n\n\n//Schema Test\n\nvar schema = {\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-06/schema#\",\n  \"$id\": \"https://cmb-bagels-api.herokuapp.com/bagels/?limit=2&offset=20\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"checked\": {\n      \"$id\": \"/properties/checked\",\n      \"type\": \"boolean\",\n      \"title\": \"The Checked Schema.\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": false,\n      \"examples\": [\n        false\n      ]\n    },\n    \"dimensions\": {\n      \"$id\": \"/properties/dimensions\",\n      \"type\": \"object\",\n      \"properties\": {\n        \"width\": {\n          \"$id\": \"/properties/dimensions/properties/width\",\n          \"type\": \"integer\",\n          \"title\": \"The Width Schema.\",\n          \"description\": \"An explanation about the purpose of this instance.\",\n          \"default\": 0,\n          \"examples\": [\n            5\n          ]\n        },\n        \"height\": {\n          \"$id\": \"/properties/dimensions/properties/height\",\n          \"type\": \"integer\",\n          \"title\": \"The Height Schema.\",\n          \"description\": \"An explanation about the purpose of this instance.\",\n          \"default\": 0,\n          \"examples\": [\n            10\n          ]\n        }\n      }\n    },\n    \"id\": {\n      \"$id\": \"/properties/id\",\n      \"type\": \"integer\",\n      \"title\": \"The Id Schema.\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        1\n      ]\n    },\n    \"name\": {\n      \"$id\": \"/properties/name\",\n      \"type\": \"string\",\n      \"title\": \"The Name Schema.\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"A green door\"\n      ]\n    },\n    \"price\": {\n      \"$id\": \"/properties/price\",\n      \"type\": \"number\",\n      \"title\": \"The Price Schema.\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        12.5\n      ]\n    },\n    \"tags\": {\n      \"$id\": \"/properties/tags\",\n      \"type\": \"array\",\n      \"items\": {\n        \"$id\": \"/properties/tags/items\",\n        \"type\": \"string\",\n        \"title\": \"The 0 Schema.\",\n        \"description\": \"An explanation about the purpose of this instance.\",\n        \"default\": \"\",\n        \"examples\": [\n          \"home\"\n        ]\n      }\n    }\n  }\n};\n\n\n\npm.test('Schema is valid', function() {\n  var jsonData = pm.response.json();\n  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\n  \n});",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "cmb",
+				"password": "bagel"
+			}
+		}
+	]
+}
